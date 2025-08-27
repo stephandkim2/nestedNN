@@ -36,7 +36,6 @@ def linear(nets: list[nn.Module], W, scale=scale, add=add, multi=multi):
                 new_nets[m] = scale(net=nets[n], prefactor=mask)
             else:    
                 new_nets[m] = add(new_nets[m], scale(net=nets[n], prefactor=mask))
-
     return new_nets
 
 def act(nets: list[nn.Module], scale=scale, add=add, multi=multi): 
